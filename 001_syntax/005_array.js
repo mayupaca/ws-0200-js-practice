@@ -4,7 +4,10 @@
  */
 
 function printArray(array) {
-}
+  for (let i of array) {
+    console.log(i);
+  }
+};
 
 /**
  *  5.2 関数内で全ての曜日を配列として宣言して返却するメソッドを実装してください
@@ -22,6 +25,8 @@ function printArray(array) {
  *
  */
 function getDays() {
+  let dayOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  return dayOfTheWeek;
 }
 
 /**
@@ -35,6 +40,12 @@ function getDays() {
  */
 
 function findNum(array, num) {
+  for (let item of array) {
+    if (item === num) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -48,6 +59,7 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+ return new Set(array).size !== array.length;
 }
 
 module.exports = {

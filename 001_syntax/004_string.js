@@ -29,7 +29,7 @@ lengthIsEven("cat");
  */
 
 function firstChar(str) {
-  return str.slice(0, 1);
+  return str[0];
 }
 firstChar("cat");
 /**
@@ -38,7 +38,7 @@ firstChar("cat");
  */
 
 function lastChar(str) {
-  return str.slice(-1);
+  return str[-1];
 }
 lastChar("cat");
 
@@ -85,10 +85,13 @@ isInclude("alpaca", "paca");
  */
 
 function printByChar(str) {
-  const char = str.split('');
   for (let i = 0; i < str.length; i++){
-    console.log(char[i]);
+    console.log(str[i]);
   }
+  // const char = str.split('');
+  // for (let i = 0; i < str.length; i++){
+  //   console.log(char[i]);
+  // }
 }
 // printByChar("alpaca");
 

@@ -59,7 +59,17 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
- return new Set(array).size !== array.length;
+  for (let i = 0; i < array.length; i++) {
+    // check if the number duplicate with other number
+    const cursor = array[i]
+    for (let j = i + 1; j < array.length; j++) {
+        if (cursor === array[j]) {
+            return true
+        }
+    }
+ }
+  return false
+//  return new Set(array).size !== array.length;
 }
 
 module.exports = {

@@ -22,17 +22,54 @@
  */
 
 class Person {
+  //インスタンスメソッド
+  sayHi() {
+    console.log("Hi!!");
+  }
+
+  //クラスメソッド
+  static describe() {
+    console.log("This is a Person class");
+  }
+
+  //フィールド
+  name = '';
+  age = 0;
+  bio = '';
+  constructor(name = "", age = 0, bio = "") {
+    this.name = name;
+    this.age = age;
+    this.bio = bio;
+  }
+  //ゲッター
+  get isUnderage() {
+    if (this.age >= 20){
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
+//toString()メソッドを使ってオブジェクトを文字列にして表示させる
+Person.prototype.toString = function () {
+  return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`
+}
+
+/** 
+ * const person = new Person('ichiro', 54, 'I like to play baseball')
+ *  person.toString(); //[object Object]が返る
+ */
 
 function main () {
   const person = new Person('ichiro', 54, 'I like to play baseball')
   person.sayHi()
   Person.describe()
   person.isUnderage
-
+  
   person.bio = 'I like to play basketball'
   return person.toString()
 }
+
 
 module.exports = {
   Person,

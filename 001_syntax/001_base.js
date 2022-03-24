@@ -41,8 +41,7 @@ displayArgument("Hey!");
  *
  */
 function sumTwoArgs(a, b) {
-  const sum = a + b;
-  return sum;
+  return a + b;
 }
 sumTwoArgs(22, 55);
 /**
@@ -50,8 +49,7 @@ sumTwoArgs(22, 55);
  *
  */
 function subtractTwoArgs(a, b) {
-  const subtract = a - b;
-  return subtract;
+  return a - b;
 }
 subtractTwoArgs(55, 22);
 
@@ -60,7 +58,7 @@ subtractTwoArgs(55, 22);
  *
  */
 function quotientTwoArgs(a, b) {
-  if (a === 0 || b === 0) {
+  if (b === 0) {
     return null;
   }
   const quotient = Math.floor(a / b);
@@ -72,8 +70,7 @@ quotientTwoArgs(55, 22)
  *
  */
 function productTwoArgs(a, b) {
-  const product = a * b;
-  return product;
+  return a * b;
 }
 productTwoArgs(55, 22);
 
@@ -82,8 +79,7 @@ productTwoArgs(55, 22);
  *
  */
 function remainderTwoArgs(a) {
-  const remainder = a % 2;
-  return remainder;
+  return a % 2;
 }
 remainderTwoArgs(55);
 

@@ -36,6 +36,7 @@ class Person {
   name = '';
   age = 0;
   bio = '';
+  // 関数にデフォルト値を与える
   constructor(name = "", age = 0, bio = "") {
     this.name = name;
     this.age = age;

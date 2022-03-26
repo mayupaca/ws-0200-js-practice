@@ -35,6 +35,55 @@ class Animal {
 
 /* ↓ ↓ ↓ こちらに実装 */
 
+class Dog extends Animal {
+  type = "dog";
+  
+  breeth() {
+    super.breeth();
+  }
+  
+  who() {
+    super.who();
+  }
+  
+  bark() {
+    console.log("wang, wang!");
+  }
+}
+
+class Chicken extends Animal {
+  type = "chicken";
+
+  breeth() {
+    super.breeth();
+  }
+
+  who() {
+    super.who();
+  }
+
+  bark() {
+    console.log("cock-a-doodle-do!");
+  }
+}
+
+class Duck extends Animal {
+  type = "duck";
+
+  breeth() {
+    super.breeth();
+  }
+  
+  who() {
+    super.who();
+  }
+
+  bark() {
+    console.log("quack, quack!");
+  }
+}
+
+
 /* ↑ ↑ ↑ こちらに実装 */
 
 function main () {

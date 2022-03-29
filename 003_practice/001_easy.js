@@ -12,6 +12,11 @@
  */
 
 function length(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    count += 1;
+  }
+  return count;
 }
 
 /**
@@ -26,6 +31,7 @@ function length(str) {
  *
  */
 function reverse(str) {
+  return str.split("").reverse().join("");
 }
 
 /**
@@ -41,6 +47,12 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+  for (let i = 0; i < str.length; i++) {
+   if (char === str[i]) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 /**
@@ -56,6 +68,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+  return a.split(b)
 }
 
 /**
@@ -71,6 +84,11 @@ function split(a, b) {
  */
 
 function sum(array) {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+  return total;
 }
 
 /**
@@ -88,6 +106,14 @@ function sum(array) {
  */
 
 function average(array) {
+  let sum = 0;
+  if (!array.length) {
+    return 0;
+  }
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return Math.floor(sum / array.length);
 }
 
 /**
@@ -103,6 +129,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+  return a.concat(b);
 }
 
 /**
@@ -118,6 +145,7 @@ function concat(a, b) {
  */
 
 function size(array) {
+  return array.length;
 }
 
 /**
@@ -126,16 +154,29 @@ function size(array) {
  *  配列の最大値と最小値を出力する関数を実装してください。
  *
  *  example:
- *    [1, 3, 7, 9] => max: 20, min: 1
+ *    [1, 3, 7, 9] => max: 9, min: 1
  *    [2, 5, 3, 6, 10, -1] => max: 10, min: -1
  *    [1] => max: 1, min: 1
  *    [] => 表示しない
  *
  */
-
+//////////////////////////////////
 function minMax(array) {
+  let min = array[0];
+  let max = array[0];
+  if (!array.length) {
+    return " ";
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) {
+      min = array[i];
+    } else if (array[i] > max) {
+      max = array[i];
+    }
+  }
+  return `max: ${max}, min: ${min}`;
 }
-
+//////////////////////////////////
 /**
  *  連番
  *
@@ -148,6 +189,14 @@ function minMax(array) {
  */
 
 function seq(num) {
+  let arr = [];
+  if (num === 0) {
+    return [];
+  }
+  for (let i = 0; i < num; i++) {
+    arr.push(i);
+  }
+  return arr;
 }
 
 /**
@@ -163,6 +212,16 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+  let arr = [];
+  if (num === 0) {
+    return [];
+  }
+  for (let i = 0; i <= num; i++) {
+    if (i % 2 === 1) {
+      arr.push(i);
+    }
+  }
+  return arr;
 }
 
 /**
@@ -178,6 +237,16 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+  let newArray = [];
+  if (!array.length) {
+    return [];
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] <= num) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
 
 
@@ -206,6 +275,20 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log(`${i} FizzBuzz`);
+    } 
+    else if (i % 3 === 0) {
+      console.log(`${i} Fizz`);
+    } 
+    else if (i % 5 === 0) {
+      console.log(`${i} Buzz`);
+    }
+    else {
+      console.log(i);
+    }
+  }
 }
 
 module.exports = {

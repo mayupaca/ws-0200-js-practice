@@ -133,8 +133,10 @@ class List {
     for (let i = 0; i < this.data.length; i++) {
       if (target !== i) {
         newArray.push(this.data[i]);
-      } else if (target === i);
-      return this.data[i];
+      }
+      if (target === i) {
+        return this.data[i];
+      }
     }
     return newArray;
   }

@@ -49,8 +49,7 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
-  
-
+  return s1.split(s2).length - 1;
 }
 /////////////////////////////////////
 /**

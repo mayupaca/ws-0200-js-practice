@@ -160,7 +160,6 @@ function size(array) {
  *    [] => 表示しない
  *
  */
-//////////////////////////////////
 function minMax(array) {
   let min = array[0];
   let max = array[0];
@@ -176,7 +175,6 @@ function minMax(array) {
   }
   console.log(`max: ${max}, min: ${min}`);
 }
-//////////////////////////////////
 /**
  *  連番
  *

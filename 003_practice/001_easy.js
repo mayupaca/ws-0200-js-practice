@@ -165,7 +165,7 @@ function minMax(array) {
   let min = array[0];
   let max = array[0];
   if (!array.length) {
-    return " ";
+    return "";
   }
   for (let i = 0; i < array.length; i++) {
     if (array[i] < min) {
@@ -174,7 +174,7 @@ function minMax(array) {
       max = array[i];
     }
   }
-  return `max: ${max}, min: ${min}`;
+  console.log(`max: ${max}, min: ${min}`);
 }
 //////////////////////////////////
 /**

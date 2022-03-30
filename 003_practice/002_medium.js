@@ -10,6 +10,10 @@
  *
  */
 function rotate(str, num) {
+  if (num < 0) {
+    return str.slice(-(num)) + str.slice(0, -(num));
+  }
+  return str.slice(str.length - num) + str.slice(0, str.length - num);
 }
 
 /**
@@ -24,8 +28,15 @@ function rotate(str, num) {
  *
  */
 function removeVowels(str) {
+  let withoutVowels = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "a" && str[i] !== "e" && str[i] !== "i" && str[i] !== "o" && str[i] !== "u") {
+      withoutVowels.push(str[i]);
+    }
+  }
+  return withoutVowels.join('');
 }
-
+////////////////////////////////////
 /**
  *  文字列のカウント
  *
@@ -38,8 +49,10 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
-}
+  
 
+}
+/////////////////////////////////////
 /**
  *  引数に与えられたアルファベットの文字列が回文であること
  *  を確認するメソッドを実装してください
@@ -53,6 +66,12 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+    return true;
 }
 
 /**
@@ -69,7 +88,22 @@ function isPalindrome(str) {
  *    11 => True
  *
  */
-function isPrime(num) {
+ function isPrime(num) {
+  if(num === 1) {
+    return false;
+  }
+  if(num === 2) {
+    return true;
+  } else {
+    for (let i = 2; i < num; i++) {
+      if(num % i === 0) {
+        return false;
+      }
+      if(i + 1 === num) {
+        return true;
+      }
+    }
+  }
 }
 
 /**
@@ -88,6 +122,19 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
+  let arrSum = 0;
+  for (let i = 0; i < array.length; i++){
+    if (array[i - 1] === 4) {
+      continue;
+    } 
+    if (array[i] !== 4) {
+      arrSum += array[i];
+    }
+    if (array[i] === 4 && array.length === 1) {
+      return 0;
+    }  
+  }
+  return arrSum;
 }
 
 module.exports = {

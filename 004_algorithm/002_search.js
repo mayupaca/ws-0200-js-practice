@@ -12,6 +12,12 @@
  */
 
 function linearSearch (array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (target === array[i]) {
+      return i;
+    } 
+  }
+  return -1;
 }
 
 /**
@@ -25,6 +31,25 @@ function linearSearch (array, target) {
  */
 
 function binarySearch (array, target) {
+  let index = -1;
+  let leftIndex = 0;
+  let rightIndex = array.length - 1;
+
+  while(leftIndex <= rightIndex) {
+    //真ん中の値を求める
+    let midIndex = Math.floor((leftIndex + rightIndex) / 2); //let mid = Math.floor(array.length / 2);は変数midが変わらないからinfinity loopになる。
+    if(array[midIndex] === target) {
+      index = midIndex;
+      break;
+    } else if(array[midIndex] < target) {
+      //targetがarray[midIndex]より大きいとき、array[midIndex]より小さい値ではないから、leftIndexを移動。
+      leftIndex = midIndex + 1;
+    } else {
+      //targetがarray[midIndex]より小さいとき、array[midIndex]より大きい値ではないから、rightIndexを移動。
+      rightIndex = midIndex - 1;
+    }
+  }
+  return index;
 }
 
 module.exports = {

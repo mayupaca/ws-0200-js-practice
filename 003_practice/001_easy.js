@@ -211,9 +211,9 @@ function seq(num) {
 
 function omitSeq(num) {
   let arr = [];
-  if (num === 0) {
-    return [];
-  }
+  // if (num === 0) {
+  //   return [];
+  // }
   for (let i = 0; i <= num; i++) {
     if (i % 2 === 1) {
       arr.push(i);
@@ -236,9 +236,9 @@ function omitSeq(num) {
 
 function filter(array, num) {
   let newArray = [];
-  if (!array.length) {
-    return [];
-  }
+  // if (!array.length) {
+  //   return [];
+  // }
   for (let i = 0; i < array.length; i++) {
     if (array[i] <= num) {
       newArray.push(array[i]);

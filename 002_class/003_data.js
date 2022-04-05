@@ -131,14 +131,23 @@ class List {
     // TODO:
     let newArray = [];
     for (let i = 0; i < this.data.length; i++) {
-      if (target !== i) {
+      if (target !== this.data[i]) {
         newArray.push(this.data[i]);
       }
-      if (target === i) {
-        return this.data[i];
-      }
     }
-    return newArray;
+    return new List(newArray);
+    // let newArray = [];
+    // for (let i = 0; i < this.data.length; i++) {
+    //   if (target !== i) {
+    //     newArray.push(this.data[i]);
+    //   }
+    //   if (target === i) {
+    //     return this.data[i];
+    //   }
+    // }
+    // return newArray;
+    //return newArray;で、配列を返しているからテストで引っかかっていた。
+    //配列にはsizeメソッドがない。だから、return new List(newArray)でインスタンスを返す必要がある。
   }
 }
 ////////////////////////////////////

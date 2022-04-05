@@ -107,6 +107,7 @@ describe('seq', () => {
   test('normal', () => {
     expect(seq(5)).toEqual([0, 1, 2, 3, 4]);
     expect(seq(0)).toEqual([]);
+    
   });
 });
 

@@ -38,13 +38,13 @@ class Animal {
 class Dog extends Animal {
   type = "dog";
   
-  breeth() {
-    super.breeth();
-  }
+  // breeth() {
+  //   super.breeth();
+  // }
   
-  who() {
-    super.who();
-  }
+  // who() {
+  //   super.who();
+  // }
   
   bark() {
     console.log("wang, wang!");
@@ -54,13 +54,13 @@ class Dog extends Animal {
 class Chicken extends Animal {
   type = "chicken";
 
-  breeth() {
-    super.breeth();
-  }
+  // breeth() {
+  //   super.breeth();
+  // }
 
-  who() {
-    super.who();
-  }
+  // who() {
+  //   super.who();
+  // }
 
   bark() {
     console.log("cock-a-doodle-do!");
@@ -70,13 +70,13 @@ class Chicken extends Animal {
 class Duck extends Animal {
   type = "duck";
 
-  breeth() {
-    super.breeth();
-  }
+  // breeth() {
+  //   super.breeth();
+  // }
   
-  who() {
-    super.who();
-  }
+  // who() {
+  //   super.who();
+  // }
 
   bark() {
     console.log("quack, quack!");

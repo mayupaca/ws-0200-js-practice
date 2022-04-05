@@ -50,6 +50,23 @@ function removeVowels(str) {
  */
 function countStr(s1, s2) {
   return s1.split(s2).length - 1;
+  //for loopの場合
+    // let acc = ''
+    // let count = 0;
+    // for (let i = 0; i < s1.length; i++) {
+    //   const char = s1.slice(i, i+1)
+    //   if (s2.slice(acc.length, acc.length + 1) === char) {
+    //     acc = acc + char
+    //   } else {
+    //     acc = ''
+    //   }
+  
+    //   if (s2 === acc) {
+    //     count++;
+    //   }
+    // }
+  
+    // return count
 }
 /////////////////////////////////////
 /**
@@ -95,6 +112,7 @@ function isPalindrome(str) {
     return true;
   } else {
     for (let i = 2; i < num; i++) {
+      // for (let i = 2; i < Math.sqrt(num); i++)
       if(num % i === 0) {
         return false;
       }

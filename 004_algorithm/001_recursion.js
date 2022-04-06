@@ -27,10 +27,7 @@ function sumSequence (n, sum = 0) {
  */
 
 function fibonacci (num, index = 0, array = []) {
-  if (num < 2) {
-    return num;
-  }
-  array.push(fibonacci(num - 1) + fibonacci(num - 2));
+  fibonacci(num - 1) + fibonacci(num - 2)
   return array;
 }
 

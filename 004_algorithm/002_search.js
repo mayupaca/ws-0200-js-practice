@@ -37,7 +37,7 @@ function binarySearch (array, target) {
 
   while(leftIndex <= rightIndex) {
     //真ん中の値を求める
-    let midIndex = Math.floor((leftIndex + rightIndex) / 2); //let mid = Math.floor(array.length / 2);は変数midが変わらないからinfinity loopになる。
+    let midIndex = Math.floor((leftIndex + rightIndex) / 2); //memo: let mid = Math.floor(array.length / 2);は変数midが変わらないからinfinity loopになる。
     if(array[midIndex] === target) {
       index = midIndex;
       break;

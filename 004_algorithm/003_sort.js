@@ -1,6 +1,6 @@
 /**
  *  2.2.1 バブルソート
- * 隣同士のデータを後ろから比較
+ * 隣同士のデータを比較
  *
  *  バブルソートを実装してください。(入力は数値のみ)
  *
@@ -26,6 +26,7 @@ function bubbleSort (array) {
 
 /**
  *  2.2.2 挿入ソート　insertion sort
+ * 整列済み要素の次の要素を、整列済みの部分の適切な位置に挿入する
  *
  *  挿入ソートを実装してください。(入力は数値のみ)
  *
@@ -50,6 +51,7 @@ function insertSort (array) {
 
 /**
  *  2.2.3 マージソート
+ * 配列を半分ずつ分割して、小さい順に並べ替えてマージ
  *
  *  マージソートを実装してください。(入力は数値のみ)
  *
@@ -59,14 +61,30 @@ function insertSort (array) {
  */
 
 function mergeSort (arr) {
+  if (arr.length === 0) {
+    return [];
+  }
   if (arr.length === 1) {
     return arr;
   }
-  
+  const center = Math.floor(arr.length / 2);
+  const left = arr.slice(0, center);
+  const right = arr.slice(center);
+
+  return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
-  
+  const result = [];
+
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
+    }
+  }
+  return [...result, ...left, ...right];
 }
 
 /**
@@ -80,7 +98,25 @@ function merge(left, right) {
  */
 
 function quickSort (a, start = 0, end = (a.length -1)) {
-  return a
+  if (a.length === 0) {
+    return [];
+  }
+  if (a.length === 0) {
+    return a;
+  }
+
+  let pivot = a[0];
+  start = [];
+  end = [];
+  
+  for (let i = 1; i < a.length; i++) {
+    if (a[i] < pivot) {
+      start.push(a[i]);
+    } else {
+      end.push(a[i]);
+    }
+  }
+  return quickSort(start).concat(pivot, quickSort(end))
 };
 
 module.exports = {

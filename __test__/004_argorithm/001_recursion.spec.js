@@ -25,29 +25,28 @@ describe('fibonacci', () => {
 });
 
 describe('fileSize', () => {
-  const data1 = {
-    type: 'file',
-    size: 10,
+  const data1 = { 
+    type: 'file', 
+    size: 10 
   }
-  const data2 = {
-    type: 'folder',
-    size: 0,
-    children: [
-      {
-        type: 'file',
-        size: 10
-      },
-      {
-        type: 'file',
-        size: 5
-      },
-    ]
+
+  const data2 = { 
+    type: 'folder', 
+    size: 0, 
+    children: [{ 
+      type: 'file', 
+      size: 10
+    }, 
+    { 
+      type: 'file', 
+      size: 5 
+    }] 
   }
-  const data3 = {
-    type: 'folder',
+    
+  const data3 = { 
+    type: 'folder', 
     size: 0,
-    children: [
-      {
+    children: [ {
         type: 'folder',
         size: 0,
         children: [

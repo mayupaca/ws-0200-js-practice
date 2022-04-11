@@ -101,7 +101,7 @@ function quickSort (a, start = 0, end = (a.length -1)) {
   if (a.length === 0) {
     return [];
   }
-  if (a.length === 0) {
+  if (a.length === 1) {
     return a;
   }
 
